@@ -1,0 +1,454 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CV - David BELLOIR</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        font-size: 10pt;
+        line-height: 1.4;
+      }
+
+      .container {
+        display: flex;
+        max-width: 210mm;
+        /* remove fixed height so content can shrink for print */
+        /* min-height: 297mm; */
+        margin: 0 auto;
+        background: white;
+      }
+      /* printing rules to keep everything on a single A4 page */
+      @page {
+        size: A4;
+        margin: 0;
+      }
+      @media print {
+        body {
+          font-size: 9pt;
+        }
+        .container {
+          width: 210mm;
+          /* allow content to flow without forcing extra page */
+          height: auto;
+          margin: 0;
+          page-break-inside: avoid;
+        }
+        .sidebar,
+        .main {
+          padding: 10px;
+        }
+      }
+
+      .sidebar {
+        width: 35%;
+        background: linear-gradient(
+          to bottom,
+          #5eb3c6 0%,
+          #7fc5d4 40%,
+          #a8d8e3 100%
+        );
+        padding: 20px;
+        color: #333;
+      }
+
+      .main {
+        width: 65%;
+        background: white;
+        padding: 20px 25px;
+      }
+
+      .photo-container {
+        width: 120px;
+        height: 120px;
+        margin: 0 auto 15px;
+        border: 3px solid #333;
+        overflow: hidden;
+      }
+
+      .photo-container img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .photo-placeholder {
+        width: 100%;
+        height: 100%;
+        background: #d9c89e;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 8pt;
+        text-align: center;
+        padding: 10px;
+      }
+
+      .header {
+        background: #333;
+        color: white;
+        padding: 20px;
+        margin: -20px -25px 20px -25px;
+        position: relative;
+      }
+
+      .header h1 {
+        font-size: 28pt;
+        font-weight: bold;
+        margin: 0;
+        letter-spacing: 1px;
+      }
+
+      .cv-badge {
+        position: absolute;
+        top: 0;
+        right: 0;
+        background: #5eb3c6;
+        color: white;
+        padding: 8px 15px;
+        font-size: 12pt;
+        font-weight: bold;
+      }
+
+      .section-title {
+        font-size: 11pt;
+        font-weight: bold;
+        text-transform: uppercase;
+        margin: 20px 0 10px 0;
+        padding-bottom: 5px;
+        border-bottom: 2px solid #333;
+      }
+
+      .sidebar .section-title {
+        color: #333;
+        font-size: 10pt;
+        border-bottom-color: #333;
+      }
+
+      .main .section-title {
+        color: #5eb3c6;
+        border-bottom-color: #5eb3c6;
+      }
+
+      .contact-item {
+        display: flex;
+        align-items: flex-start;
+        margin: 8px 0;
+        font-size: 9pt;
+      }
+
+      .contact-icon {
+        width: 16px;
+        margin-right: 8px;
+        color: #333;
+        flex-shrink: 0;
+      }
+
+      .skills-section {
+        margin: 15px 0;
+      }
+
+      .skills-category {
+        margin: 10px 0;
+        font-size: 9pt;
+      }
+
+      .skills-category-title {
+        font-weight: bold;
+        margin-bottom: 3px;
+      }
+
+      .skills-list {
+        line-height: 1.5;
+      }
+
+      .language-item {
+        margin: 8px 0;
+        font-size: 9pt;
+      }
+
+      .interests-list {
+        list-style: none;
+        padding-left: 0;
+      }
+
+      .interests-list li {
+        margin: 5px 0;
+        font-size: 9pt;
+        padding-left: 15px;
+        position: relative;
+      }
+
+      .interests-list li:before {
+        content: "•";
+        position: absolute;
+        left: 0;
+      }
+
+      .profile-text {
+        text-align: justify;
+        font-size: 9pt;
+        line-height: 1.5;
+        margin-bottom: 15px;
+      }
+
+      .project-item {
+        margin: 10px 0;
+      }
+
+      .project-title {
+        font-weight: bold;
+        font-size: 9pt;
+        margin-bottom: 3px;
+      }
+
+      .project-description {
+        font-size: 9pt;
+        margin-left: 10px;
+        line-height: 1.5;
+      }
+
+      .experience-item {
+        margin: 15px 0;
+      }
+
+      .experience-period {
+        font-weight: bold;
+        font-size: 9pt;
+        margin-bottom: 3px;
+      }
+
+      .experience-title {
+        font-weight: bold;
+        font-size: 9pt;
+        margin-bottom: 5px;
+      }
+
+      .experience-list {
+        margin-left: 10px;
+        font-size: 9pt;
+        line-height: 1.6;
+      }
+
+      .experience-list li {
+        margin: 3px 0;
+      }
+
+      .formation-item {
+        margin: 12px 0;
+      }
+
+      .formation-period {
+        font-size: 9pt;
+        margin-bottom: 3px;
+      }
+
+      .formation-title {
+        font-weight: bold;
+        font-size: 9pt;
+      }
+
+      ul {
+        list-style-position: outside;
+        padding-left: 15px;
+      }
+
+      @media print {
+        body {
+          margin: 0;
+          padding: 0;
+        }
+        .container {
+          max-width: 100%;
+          min-height: auto;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Sidebar gauche -->
+      <div class="sidebar">
+        <div class="photo-container">
+          <img src="avatar.png" alt="Photo David BELLOIR" />
+        </div>
+
+        <div class="section-title">COORDONNÉES</div>
+        <div class="contact-item">
+          <span class="contact-icon">📍</span>
+          <span>49300, Cholet</span>
+        </div>
+        <div class="contact-item">
+          <span class="contact-icon">📱</span>
+          <span>0620776492</span>
+        </div>
+        <div class="contact-item">
+          <span class="contact-icon">✉️</span>
+          <span>david160@hotmail.fr</span>
+        </div>
+        <div class="contact-item">
+          <span class="contact-icon">🚗</span>
+          <span>Permis B / A2 - Véhiculé</span>
+        </div>
+        <div class="contact-item">
+          <span class="contact-icon">🌍</span>
+          <span>mobile géographiquement</span>
+        </div>
+        <div class="contact-item">
+          <span class="contact-icon">🔗</span>
+          <span>https://www.linkedin.com/in/david-belloir-664bb8129</span>
+        </div>
+
+        <div class="section-title">COMPÉTENCES</div>
+        <div class="skills-section">
+          <div class="skills-category">
+            <div class="skills-category-title">FRONTEND</div>
+            <div class="skills-list">
+              • HTML5, CSS3, JavaScript,<br />
+              TypeScript, React-Vite,<br />
+              Tailwind CSS
+            </div>
+          </div>
+          <div class="skills-category">
+            <div class="skills-category-title">BACKEND (en apprentissage)</div>
+            <div class="skills-list">
+              • Java, Node.js, Python, MySQL,<br />
+              PostgreSQL
+            </div>
+          </div>
+          <div class="skills-category">
+            <div class="skills-category-title">AUTRES</div>
+            <div class="skills-list">
+              • Git GitHub, VS Code, Figma<br />
+              (en apprentissage)
+            </div>
+          </div>
+        </div>
+
+        <div class="section-title">LANGUES</div>
+        <div class="language-item">
+          <strong>Français</strong><br />
+          Langue maternelle
+        </div>
+        <div class="language-item">
+          <strong>Anglais</strong><br />
+          Élémentaire - A2
+        </div>
+
+        <div class="section-title">CENTRES D'INTÉRÊT</div>
+        <ul class="interests-list">
+          <li>Cinéma (Films et séries)</li>
+          <li>Écriture (Histoires et scénarios)</li>
+          <li>Moto</li>
+          <li>Poker</li>
+          <li>Voyage</li>
+        </ul>
+      </div>
+
+      <!-- Contenu principal -->
+      <div class="main">
+        <div class="header">
+          <h1>David BELLOIR</h1>
+          <div class="cv-badge">CV</div>
+        </div>
+
+        <div class="section-title">PROFIL PROFESSIONNEL</div>
+        <p class="profile-text">
+          Après plus de 25 ans d'expérience dans l'industrie, j'ai décidé qu'il
+          était temps de me consacrer à moi-même. Je me tourne désormais vers le
+          développement web pour allier ma créativité et mon sens du design et
+          de la logique. Je suis à la recherche d'une alternance pour
+          approfondir mes connaissances et acquérir de nouvelles compétences.
+        </p>
+
+        <div class="section-title">PROJETS RÉALISÉS</div>
+        <div class="project-item">
+          <div class="project-title">DATAVIZ Paris (en binôme)</div>
+          <div class="project-description">
+            • REACT-VITE TYPESCRIPT TAILWIND CSS RECHARTS API REST<br />
+            Application de visualisation de données : Paris et arrondissements
+            via une API opendata avec des graphiques dynamiques et une gestion
+            de filtres <br />
+          </div>
+        </div>
+        <div class="project-item">
+          <div class="project-title">ADAOPTE (en binôme)</div>
+          <div class="project-description">
+            • REACT-VITE TYPESCRIPT TAILWIND CSS<br />
+            Création de site d'adoption d'animaux suivant un cahier des charges
+            et une maquette.
+          </div>
+        </div>
+        <div class="project-item">
+          <div class="project-title">QUIZZ (en groupe)</div>
+          <div class="project-description">
+            • HTML CSS JAVASCRIPT<br />
+            Création libre d'un quizz dynamique sur les dessins animés
+          </div>
+        </div>
+
+        <div class="section-title">FORMATION</div>
+        <div class="formation-item">
+          <div class="formation-period">10/2025 - Actuel</div>
+          <div class="formation-title">
+            Développeur web Full Stack- Titre RNCP6
+          </div>
+          <div>Ada Tech School, Nantes</div>
+        </div>
+        <div class="formation-item">
+          <div class="formation-period">11/2025 - 07/2016</div>
+          <div class="formation-title">
+            Technicien Supérieur Méthodes Produit Process- Titre RNCP5
+          </div>
+          <div>AFPA, Saint Herblain (44)</div>
+        </div>
+        <div class="formation-item">
+          <div class="formation-period">01/2009 - 07/2009</div>
+          <div class="formation-title">
+            Responsable de Production- Titre RNCP5
+          </div>
+          <div>CCI Eurespace, Cholet</div>
+        </div>
+
+        <div class="section-title">PARCOURS PROFESSIONNEL</div>
+        <div class="experience-item">
+          <div class="experience-period">Nov. 2016 - Août 2025</div>
+          <div class="experience-title">
+            Approvisionneur-Confection-Relais Qualité - Michelin, Cholet - CDI
+          </div>
+          <ul class="experience-list">
+            <li>
+              Réception des marchandises et contrôles de conformité en vérifiant
+              les quantités et l'état
+            </li>
+            <li>Mise en place des produits sur machines pour confection</li>
+            <li>
+              Gestion qualité des produits et de l'environnement de travail
+            </li>
+          </ul>
+        </div>
+        <div class="experience-item">
+          <div class="experience-period">Févr. 2000 - Oct. 2014</div>
+          <div class="experience-title">
+            Agent de production - TBS , Cholet - CDI
+          </div>
+          <ul class="experience-list">
+            <li>Confection volets roulants et portes de garage</li>
+            <li>
+              Organisation du travail en priorisant les tâches dans le but de
+              répondre aux attentes et de respecter les délais<br />
+            </li>
+            <li>Gestion et organisation d'équipe</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
