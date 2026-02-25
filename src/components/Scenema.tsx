@@ -10,7 +10,6 @@ export default function Scenema() {
         fontFamily: "sans-serif",
       }}
     >
-      {/* Bouton retour */}
       <div style={{ padding: "24px 40px" }}>
         <Link
           to="/"
@@ -25,7 +24,6 @@ export default function Scenema() {
         </Link>
       </div>
 
-      {/* Contenu centré verticalement */}
       <div
         style={{
           display: "flex",

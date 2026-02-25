@@ -26,8 +26,6 @@ const demoItems = [
   },
 ];
 
-// projectsData removed — individual project components used instead
-
 export default function Projects() {
   return (
     <section

@@ -14,7 +14,6 @@ export default function CV() {
         padding: "40px 32px 80px",
       }}
     >
-      {/* Bouton retour */}
       <div style={{ width: "100%", maxWidth: "900px", marginBottom: "24px" }}>
         <Link
           to="/"
@@ -29,7 +28,6 @@ export default function CV() {
         </Link>
       </div>
 
-      {/* Titre */}
       <h1
         style={{
           fontSize: "clamp(2rem, 5vw, 4rem)",
@@ -46,7 +44,6 @@ export default function CV() {
         Mon CV
       </h1>
 
-      {/* Encadré téléchargement */}
       <div
         style={{
           width: "100%",
@@ -114,7 +111,6 @@ export default function CV() {
         </a>
       </div>
 
-      {/* Iframe CV */}
       <div
         style={{
           width: "100%",

@@ -43,7 +43,6 @@ export default function Footer() {
           maxWidth: "860px",
         }}
       >
-        {/* Me contacter */}
         <Link
           to="/contact"
           style={linkStyle}
@@ -66,7 +65,6 @@ export default function Footer() {
           Me contacter
         </Link>
 
-        {/* Mon CV */}
         <Link
           to="/cv"
           style={linkStyle}
@@ -92,7 +90,6 @@ export default function Footer() {
           Mon CV
         </Link>
 
-        {/* GitHub */}
         <a
           href="https://github.com/David4976"
           target="_blank"
@@ -107,7 +104,6 @@ export default function Footer() {
           GitHub
         </a>
 
-        {/* LinkedIn */}
         <a
           href="https://www.linkedin.com/in/david-belloir-664bb8129/"
           target="_blank"

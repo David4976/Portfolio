@@ -76,7 +76,6 @@ export default function Contact() {
         padding: "80px 32px",
       }}
     >
-      {/* Titre */}
       <h1
         style={{
           fontSize: "clamp(2.5rem, 6vw, 5rem)",
@@ -93,7 +92,6 @@ export default function Contact() {
         Me contacter
       </h1>
 
-      {/* Formulaire */}
       <form
         onSubmit={handleSubmit}
         style={{

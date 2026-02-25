@@ -26,7 +26,6 @@ export default function ProjectPage({
         fontFamily: "sans-serif",
       }}
     >
-      {/* Bouton retour */}
       <div style={{ padding: "24px 40px" }}>
         <Link
           to="/"
@@ -52,7 +51,6 @@ export default function ProjectPage({
           gap: "48px",
         }}
       >
-        {/* Titre */}
         <h1
           style={{
             fontSize: "clamp(2rem, 8vw, 6rem)",
@@ -69,7 +67,6 @@ export default function ProjectPage({
           {title}
         </h1>
 
-        {/* Description */}
         <div
           style={{
             width: "100%",
@@ -92,7 +89,6 @@ export default function ProjectPage({
           </p>
         </div>
 
-        {/* Technologies */}
         {technologies.length > 0 && (
           <div
             style={{
@@ -138,7 +134,6 @@ export default function ProjectPage({
           </div>
         )}
 
-        {/* Screenshots — 1 colonne sur mobile, 2 sur desktop */}
         {images.length > 0 && (
           <div
             style={{
@@ -166,7 +161,6 @@ export default function ProjectPage({
           </div>
         )}
 
-        {/* Liens */}
         <div
           style={{
             display: "flex",

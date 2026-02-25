@@ -226,7 +226,6 @@ const MenuItem: React.FC<MenuItemProps> = ({
         {text}
       </Link>
 
-      {/* Marquee overlay — starts hidden below (translateY 101%) */}
       <div
         ref={marqueeRef}
         style={{

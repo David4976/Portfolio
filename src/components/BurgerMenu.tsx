@@ -15,7 +15,6 @@ export default function BurgerMenu() {
 
   return (
     <>
-      {/* Bouton burger — toujours visible en haut à droite */}
       <button
         onClick={toggleMenu}
         style={{
@@ -66,7 +65,6 @@ export default function BurgerMenu() {
         />
       </button>
 
-      {/* Menu overlay */}
       <div
         style={{
           position: "fixed",
@@ -130,7 +128,6 @@ export default function BurgerMenu() {
         </Link>
       </div>
 
-      {/* Backdrop */}
       {isMenuOpen && (
         <div
           onClick={closeMenu}
