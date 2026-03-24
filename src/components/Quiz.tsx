@@ -1,6 +1,6 @@
 import ProjectPage from "./ProjectPage";
 
-export default function Quizz() {
+export default function Quiz() {
   return (
     <ProjectPage
       title="Quiz"
